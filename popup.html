@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>API Tap</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div id="app">
+    <!-- 顶部工具栏 -->
+    <div class="header">
+      <div class="header-left">
+        <h1 class="title">API Tap</h1>
+        <span class="subtitle">点击接口捕捉器</span>
+      </div>
+      <div class="header-actions">
+        <label class="toggle-label" title="显示完整 URL（含 ? 后参数）">
+          <input type="checkbox" id="showFullUrl" />
+          <span class="toggle-text">完整URL</span>
+        </label>
+        <button id="btnExport" class="btn btn-export" title="导出全部 URL">📥 导出</button>
+        <button id="btnRefresh" class="btn btn-icon" title="刷新列表">↻</button>
+        <button id="btnClear" class="btn btn-icon btn-danger" title="清空全部">✕</button>
+      </div>
+    </div>
+
+    <!-- 统计栏 -->
+    <div class="stats-bar" id="statsBar">
+      <span>点击 <strong id="clickCount">0</strong></span>
+      <span>请求 <strong id="requestCount">0</strong></span>
+    </div>
+
+    <!-- 主列表 -->
+    <div class="session-list" id="sessionList">
+      <div class="empty-state">暂无记录，点击页面开始捕捉 ✨</div>
+    </div>
+
+    <!-- 底部状态 -->
+    <div class="footer">
+      <span class="status-dot" id="statusDot"></span>
+      <span id="statusText">监听中</span>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
